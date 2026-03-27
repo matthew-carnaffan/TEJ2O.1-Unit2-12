@@ -45,7 +45,7 @@ input.onButtonPressed(Button.A, function() {
     myStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
     myStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
     myStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
-    myStrip.setPixelColor(4, neopixel.colors(NeoPixelColors.Green))
+    myStrip.show()
   }
 
   //Displays distance
