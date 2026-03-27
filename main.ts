@@ -48,6 +48,15 @@ input.onButtonPressed(Button.A, function() {
     myStrip.show()
   }
 
-  //Displays distance
+  //Displays distance, pauses 5 seconds.
   basic.showNumber(distanceSensor)
+  basic.pause(5000)
 })
+
+//cleans up again
+basic.showIcon(IconNames.Happy)
+myStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+myStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+myStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
+myStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
+myStrip.show()
