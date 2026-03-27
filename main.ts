@@ -22,27 +22,32 @@ myStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
 myStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
 myStrip.show()
 
-//Messures distance
-let distanceSensor: number = 0  
-    input.onButtonPressed(Button.A, function() {
-distanceSensor = sonar.ping(
+//Messures distance 
+let distanceSensor: number = -1
+input.onButtonPressed(Button.A, function() {
+  distanceSensor = sonar.ping(
     DigitalPin.P1,
     DigitalPin.P2,
     PingUnit.Centimeters) 
-    })
 
 //Turns lights to red if microbit to close to a object.
-if (distanceSensor < 10) {
+  if (distanceSensor < (0,11)){
     myStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
     myStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Red))
     myStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
     myStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Red))
     myStrip.show()
+  }
 
-    //turn lights to green if microbit is a good distance from a object.
-} else {
+//turn lights to green if microbit is a good distance from a object.
+  else {
     myStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
     myStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
     myStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
     myStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
-}
+    myStrip.setPixelColor(4, neopixel.colors(NeoPixelColors.Green))
+  }
+
+  //Displays distance
+  basic.showNumber(distanceSensor)
+})
